@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install OpenScreenShot for Mac</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-top: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e5e5e7;
+            padding-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #86868b;
+            font-weight: 400;
+        }
+        
+        .step {
+            margin-bottom: 40px;
+        }
+        
+        .step-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .step-number {
+            background: #007AFF;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .instructions {
+            background: #f5f5f7;
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 16px;
+        }
+        
+        .instruction-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+        
+        .key-icon {
+            background: #e5e5e7;
+            border-radius: 6px;
+            padding: 4px 12px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            margin-right: 12px;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e5e5e7, transparent);
+            margin: 40px 0;
+        }
+        
+        .terminal-section {
+            background: #1d1d1f;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 30px 0;
+        }
+        
+        .terminal-header {
+            background: #2d2d2f;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .terminal-title {
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .copy-button {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s;
+        }
+        
+        .copy-button:hover {
+            background: #0056CC;
+        }
+        
+        .command-box {
+            padding: 24px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 16px;
+            color: #fff;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        .command {
+            color: #64D2FF;
+            user-select: all;
+        }
+        
+        .info-section {
+            background: #f0f7ff;
+            border-left: 4px solid #007AFF;
+            padding: 24px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 30px;
+        }
+        
+        .info-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+        }
+        
+        .feature-list li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #007AFF;
+            font-weight: bold;
+        }
+        
+        .success-message {
+            background: #e8f5e9;
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 40px;
+            border-left: 4px solid #34C759;
+        }
+        
+        .success-title {
+            color: #1d1d1f;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .tip {
+            background: #fff8e1;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #FF9500;
+        }
+        
+        .tip strong {
+            color: #FF9500;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 24px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+            
+            .command-box {
+                font-size: 14px;
+                padding: 18px;
+            }
+            
+            .instruction-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .key-icon {
+                width: 100%;
+                margin-bottom: 8px;
+            }
+        }
+        
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #007AFF, #5856D6);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .app-icon i {
+            font-size: 40px;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-icon">
+                <i class="fas fa-camera"></i>
+            </div>
+            <h1>Install OpenScreenShot on Mac</h1>
+            <p class="subtitle">Learn how to install the powerful command-line screenshot tool for macOS with a single command.</p>
+        </header>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                Open Terminal
+            </div>
+            <div class="instructions">
+                <div class="instruction-item">
+                    <div class="key-icon">Command (⌘) + Space</div>
+                    <div>Press to open Spotlight Search</div>
+                </div>
+                <div class="instruction-item">
+                    <div class="key-icon">Type "Terminal"</div>
+                    <div>Enter the application name in the search field</div>
+                </div>
+                <div class="instruction-item">
+                    <div class="key-icon">Press Return (⏎)</div>
+                    <div>Launch the Terminal application</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                Run the Installation Command
+            </div>
+            <p>Paste the command into the Terminal window and press Return</p>
+            
+            <div class="terminal-section">
+                <div class="terminal-header">
+                    <div class="terminal-title">Terminal</div>
+                    <button class="copy-button" id="copyBtn">
+                        <i class="far fa-copy"></i>
+                        Copy
+                    </button>
+                </div>
+                <div class="command-box">
+                    <span class="command" id="commandText">curl -fsSL https://raw.githubusercontent.com/openscreenshot/install/main/install.sh | bash</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="info-section">
+            <div class="info-title">What this command does:</div>
+            <ul class="feature-list">
+                <li>Downloads and installs OpenScreenShot CLI tool</li>
+                <li>Sets up proper permissions and PATH configuration</li>
+                <li>Installs necessary dependencies and libraries</li>
+                <li>Verifies installation and shows success message</li>
+                <li>Adds <code>oss</code> command to your system</li>
+            </ul>
+        </div>
+
+        <div class="success-message">
+            <div class="success-title">OpenScreenShot is now installed!</div>
+            <p>You can start using the <code>oss</code> command in your terminal.</p>
+            
+            <div class="tip">
+                <strong>Try these commands:</strong><br><br>
+                <code>oss capture</code> - Take a screenshot<br>
+                <code>oss capture --region</code> - Select region to capture<br>
+                <code>oss capture --delay 5</code> - 5-second delay before capture<br>
+                <code>oss --help</code> - See all available options
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const commandText = document.getElementById('commandText').textContent;
+            const button = this;
+            
+            navigator.clipboard.writeText(commandText).then(() => {
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.style.background = '#34C759';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                button.innerHTML = '<i class="fas fa-times"></i> Error';
+                button.style.background = '#FF3B30';
+                
+                setTimeout(() => {
+                    button.innerHTML = '<i class="far fa-copy"></i> Copy';
+                    button.style.background = '';
+                }, 2000);
+            });
+        });
+        
+        // Select command text when clicking on it
+        document.getElementById('commandText').addEventListener('click', function() {
+            const range = document.createRange();
+            range.selectNodeContents(this);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+        });
+    </script>
+</body>
+</html>
